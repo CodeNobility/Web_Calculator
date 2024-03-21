@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #0e041f;
+        }
+
+        .calculator {
+            /* background-color: #eedfa2; */
+            background-color: #160533;
+            border: 3px solid #fffffd;
+            box-shadow: 5px 5px 10px 12px rgb(1, 247, 206);
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            margin-left: 15%;
+        }
+        .input_box {
+            background-color: #b5b5b5;
+            border-radius: 15%;
+        }
+
+        .display {
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            font-size: 24px;
+            border: 3px solid #fffefe;
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: center;
+            border-radius: 10%;
+            /* border: 0.5px solid #fffefe; */
+        }
+        .clear {
+            color: #a71010;
+            border-radius: 20%;
+        }
+        .delete {
+            color: #a71010;
+            border-radius: 20%;
+        }
+
+        button {
+            width: 70px;
+            height: 50px;
+            margin: 5px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-button {
+           background-color: #FF5733; 
+           color: white; 
+           text-decoration: none; 
+           display: inline-block; 
+           padding: 10px 20px; 
+           border-radius: 50px; 
+           cursor: pointer; 
+        }
+
+        .nav-button:hover {
+           background-color: greenyellow; 
+        }
+      
+        p {
+           color: darkblue;
+        }
+        .a {
+            border-radius: 20%;
+        }
+        .b {
+            border-radius: 20%;
+        }
+        .c {
+            border-radius: 20%;
+        }
+        .d {
+            border-radius: 20%;
+        }
+        .e {
+            border-radius: 20%;
+        }
+        .f {
+            border-radius: 20%;
+        }
+        .g {
+            border-radius: 20%;
+        }
+        .h {
+            border-radius: 20%;
+        }
+        .i {
+            border-radius: 20%;
+        }
+        .j {
+            border-radius: 20%;
+        }
+        .k {
+            border-radius: 20%;
+        }
+        .l {
+            border-radius: 20%;
+        }
+        .m {
+            border-radius: 20%;
+        }
+        .n {
+            border-radius: 20%;
+        }
+        .o {
+            border-radius: 20%;
+        }
+        .p {
+            border-radius: 20%;
+        }
+        .main_button {
+            background-color: #d45639;
+            color: #fffdfd;
+            border-radius: 35%;
+        }
+        .bold {
+            font-weight: bold;
+            color: #c3d457;
+            text-shadow: 1px 2px rgb(233, 19, 19);
+        }
+        .down_introduction {
+            height: 40vh;
+            width: 33vw;
+            background-color: #0e041f;
+            margin-left: 5%;
+        }
+        .web {
+            background-color: #0e041f;
+            color: aqua;
+            font-size: 5rem;
+            text-shadow: 2px 6px orange;
+        }
+
+        @media screen and (max-width : 950px){
+            .calculator {
+                width: 40vw;
+            }
+            .down_introduction{
+                display: none;
+            }
+        }
+
+    </style>
+    <title>Simple Calculator By Prince Kumar Gupta</title>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <input type="text" class="input_box" id="result" readonly>
+        </div>
+      
+        <div class="button-row">
+            <button class="clear" onclick="clearDisplay()">Clear
+            </button>
+          
+            <button class="delete" onclick="deleteLastInput()">Delete
+            </button>
+          
+            <button class="a" onclick="calculateSquareRoot()">√
+            </button>
+          
+            <button class="b" onclick="appendToDisplay('/')">➗
+            </button>
+          
+        </div>
+      
+        <div class="button-row">
+            <button class="c" onclick="appendToDisplay('7')">𝟳</button>
+          
+            <button class="d" onclick="appendToDisplay('8')">𝟴</button>
+          
+            <button class="e" onclick="appendToDisplay('9')">𝟵</button>
+            <button class="f" onclick="appendToDisplay('')">➖</button>
+          
+        </div>
+      
+        <div class="button-row">
+            <button class="g"
+        onclick="appendToDisplay('4')">𝟰</button>
+            
+            <button class="h"
+        onclick="appendToDisplay('5')">𝟱</button>
+            <button class="i"
+        onclick="appendToDisplay('6')">𝟲</button>
+          
+            <button class="j"
+        onclick="appendToDisplay('*')">✖️</button>
+          
+        </div>
+      
+        <div class="button-row">
+            <button class="k"
+        onclick="appendToDisplay('1')">𝟭</button>
+          
+            <button class="l"
+        onclick="appendToDisplay('2')">𝟮</button>
+          
+            <button class="m"
+        onclick="appendToDisplay('3')">𝟯</button>
+          
+            <button class="n"
+        onclick="appendToDisplay('+')">➕</button>
+          
+        </div>
+      
+        <div class="button-row">
+            <button class="o"
+        onclick="appendToDisplay('0')">𝟬</button>
+          
+            <button class="p" onclick="appendToDisplay('.')">. 
+        </button>
+            <button class="main_button" onclick="calculateResult()">=</button>
+        </div>
+      
+      <p> <span class="bold"><B>DESIGN BY PRINCE KUMAR GUPTA</B></span> </p>
+      
+    </div>
+    <div class="down_introduction">
+        <p class="web"> WEB CALCULATOR</p>
+    </div>
+  
+    <script>
+        const resultDisplay = document.getElementById("result");
+        let currentInput = "";
+
+        function updateDisplay() {
+            resultDisplay.value = currentInput;
+        }
+
+        function appendToDisplay(char) {
+            currentInput += char;
+            updateDisplay();
+        }
+
+        function clearDisplay() {
+            currentInput = "";
+            updateDisplay();
+        }
+
+        function calculateResult() {
+            try {
+                const result = eval(currentInput);
+                currentInput = result.toString();
+                updateDisplay();
+            } catch (error) {
+                currentInput = "Error";
+                updateDisplay();
+            }
+        }
+
+        function calculateSquareRoot() {
+            try {
+                const value = parseFloat(currentInput);
+                if (!isNaN(value)) {
+                    const result = Math.sqrt(value);
+                    currentInput = result.toString();
+                    updateDisplay();
+                } 
+                else {
+                    currentInput = "Error";
+                    updateDisplay();
+                }
+            } 
+            catch (error) {
+                currentInput = "Error";
+                updateDisplay();
+            }
+        }
+
+        function deleteLastInput() {
+            currentInput = currentInput.slice(0, -1); // Remove the last character
+            updateDisplay();
+        }
+
+        updateDisplay();
+    </script>
+</body>
+</html>
